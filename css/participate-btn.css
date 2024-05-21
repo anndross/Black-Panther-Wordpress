@@ -1,0 +1,112 @@
+.c-participate-modal {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: var(--transition-duration-normal);
+    z-index: 10;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+
+    .c-participate-modal__overlay {
+        height: 100%;
+        width: 100%;
+        background-color: #00000089;
+    }
+
+    .c-participate-modal__close-icon {
+        align-self: flex-end;
+        cursor: pointer;
+    }
+
+    .c-participate-modal__form {
+        min-width: 280px;
+        max-width: 300px;
+        padding: 32px 22px;
+        padding-top: 18px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: var(--secondary-color);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        transition: var(--transition-duration-fast);
+    }
+
+    .c-participate-modal__fields {
+        border: 0;
+        display: grid;
+        text-align: left;
+
+        legend {
+            margin-bottom: 20px;
+            color: var(--accent-color-strong);
+            font-size: var(--font-size-2);
+            text-transform: uppercase;
+        }
+    }
+
+    .c-participate-modal__label {
+        font-size: var(--font-size-2);
+        font-weight: 400;
+        color: var(--primary-color);
+    }
+
+    .c-participate-modal__input {
+        border: 0;
+        border-bottom: 1px solid var(--border-light-color);
+        margin-bottom: 20px;
+        height: 16px;
+        font-size: var(--font-size-2);
+        transition: border var(--transition-duration-normal);
+
+        &:focus {
+            outline: none;
+            border-color: var(--accent-color-hover);
+        }
+    }    
+
+    .c-participate-modal__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1%;
+    }
+
+    .c-participate-modal__logo {
+        text-decoration: none;
+    }
+}
+
+.c-participate-modal--active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+
+    .c-participate-modal__form {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+
+
+.c-participate-btn {
+    width: 176px;
+    height: 36px;
+    color: var(--primary-color);
+    font-weight: var(--font-bold);
+    border: 0;
+    cursor: pointer;
+    transition: background var(--transition-duration-normal);
+    background-color: var(--accent-color);
+    border-radius: 20px;
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: var(--accent-color-hover);
+    }
+}   
